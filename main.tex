@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{sample.bib}
+
+\title{A report on a basic group that was implemented and studied}
+\author{Kevin Njokom\\ email: \href{mailto:kevintah@yahoo.com}{kevintah@yahoo.com} } 
+\date{July 2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+   A topological group, $G$ was implemented and its representations studied. It was found to have a representation into $GL_5(R)$. This representation was realized. This Abelian Lie was also found to have an 8-dimensional faithful unitary representation.
+\end{abstract}
+
+\section{Basic group implementation}
+     The construction started by  considering two tuples of four numbers henceforth referred to as  quartets and a multiplication law. Let us take a quartet to be (s,p,m,n). Let s,p,n $\in  \mathbb{R}$ $\setminus$ $\{0\}$ , and and m $\in \mathbb{R}$. We now take $\mathbb{R}$ $\setminus$ $\{0\}$ to be $\mathbb{R^*}$  moving forward. A law is now imposed: Given two quartets $(s,p,m,n)$ and $(q,r,t,u)$ then $(s,p,m,n).(q,r,t,u) := ( \frac{2}{3} sq, pr,m +(1+t),nu)$. To see that this construction was indeed a group, closure, inverse and identity were checked. The group is found in its most basic form to be composed of three different groups. Let's call them $G_1$,$G_2$,$G_3$.  $G_1$ has underling set $R^*$  and has the operation  $s.q := \frac{2}{3} sq$. $G_2$  is the multiplicative group over the real numbers excluding 0.  This takes care of the second and fourth elements of the quartet, and $G_3$ is has underlying set $\mathbb{R}$ with $m.t = m + (1+t)$. These three groups are can be easily shown to be indeed groups \cite{4498165}. The group is then $G_1 \times G_2 \times G_3 \times G_2$ It has identity $(e_1,e_2,e_3,e_2)$ = $(\frac{3}{2}, 1, -1,1)$ and  inverse $(\frac{9}{4s}, \frac{1}{p}, -m -2 , \frac{1}{n})$. This group is an Abelian Lie group as seen directly from its construction.
+
+\section{Group Representations}
+It was suggested that  a left regular representation exists for this group. This followed from the fact that locally compact Hausdorff topological groups have finite-dimensional representations \cite{4498337}. A representation into $GL_5(R)$  was suggested to exist \cite{4498337} and found. 
+\[
+\begin{pmatrix} \frac{2}{3}q & 0 & 0 & 0 & 0\\
+                    0& r & 0 & 0 & 0\\                                              
+                    0 & 0 & 1 & 0 & 1+ t\\                                                               0 & 0 & 0 & u & 0\\                                     
+                    0 & 0 & 0 & 0 & 1 \\                                              
+                    \end{pmatrix}
+\cdot
+ \begin{pmatrix} s \\
+                          p \\                         
+                          m\\                                                                         n\\                                         
+                          1\\ \end{pmatrix}
+= \begin{pmatrix} \frac{2}{3} qs\\
+                              pr \\                                                  
+                              1+m+t\\                                                    
+                              nu\\                             
+                              1\\   \end{pmatrix}
+\]
+
+It was also suggested \cite{4498651} that this group would have a faithful unitary representation on the sequence space $l^P(G)$. This follows from the fact that $G_1$ and $G_2$ have finite dimensional unitary representations and thus so does their product. $\rho_1 \times \rho_2 : G_1 \times G_2 \to U(n_1) \times U(n_2) \hookrightarrow U(n_1 + n_2)$ . $G_3$ is isomorphic to $\mathbb{R}$  and has a faithful unitary representation\cite{4498651} too. 
+
+\section{Algebra}
+    This group is an abelian Lie algebra following from the fact that $G_1$, $G_2$,  $G_3$ are abelian and the product of the groups $G_i$ is topological. This means the Lie brackets are trivial and structure constants must be trivial.
+
+\section{Conclusion}
+ The abstract group  $\mathbb{R^4} \times C_2^3$ was realized and studied. A representation into $GL_5$ was found, and it was also shown that this group has an  8-dimensional faithful unitary representation.
+ 
+\section*{Acknowledgements}
+
+I learned about the very basics groups by asking very simple questions on mathematics stack exchange. I want to acknowledge and thank every single person I interacted with while constructing a basic group, and asking silly questions.
+ 
+\printbibliography
+
+\end{document}
+
